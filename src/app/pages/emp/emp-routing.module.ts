@@ -8,13 +8,14 @@ import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot([
+  imports: [RouterModule.forChild([
     {
       path: 'dashboard',
-      children: [
-        { path: 'dashboard', component: DashboardComponent },
-        { path: 'profile', component: ProfileComponent },
-      ]
+      component: DashboardComponent
+    },
+    {
+      path: 'profile',
+      component: ProfileComponent
     }
   ])],
 })
