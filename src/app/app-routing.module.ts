@@ -22,13 +22,13 @@ import { EmpLayoutsComponent } from './shared/layouts/emp-layouts/emp-layouts.co
             {
                 path: 'admin', component: AdminLayoutsComponent,
                 children: [
-                    { path: '', loadChildren: () => import('./shared/layouts/admin-layouts/admin-layouts.module').then(m => m.AdminLayoutsModule) },
+                    { path: 'admin', loadChildren: () => import('./shared/layouts/admin-layouts/admin-layouts.module').then(m => m.AdminLayoutsModule) },
                 ]
             },
             {
                 path: 'emp', component: EmpLayoutsComponent,
                 children: [
-                    { path: '', loadChildren: () => import('./shared/layouts/emp-layouts/emp-layouts.module').then(m => m.EmpLayoutsModule) },
+                    { path: 'emp', loadChildren: () => import('./shared/layouts/emp-layouts/emp-layouts.module').then(m => m.EmpLayoutsModule) },
                 ]
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },

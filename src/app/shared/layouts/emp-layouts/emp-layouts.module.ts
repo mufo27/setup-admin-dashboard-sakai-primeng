@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 
-import { EmpLayoutsRoutingModule } from './emp-layouts-routing.module';
-
 import { EmpLayoutsComponent } from './emp-layouts.component';
 import { EmpTopbarComponent } from './emp-topbar/emp-topbar.component';
 import { EmpSidebarComponent } from './emp-sidebar/emp-sidebar.component';
@@ -23,8 +21,7 @@ import { EmpFooterComponent } from './emp-footer/emp-footer.component';
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    EmpLayoutsRoutingModule
+    RouterModule
   ]
 })
 export class EmpLayoutsModule { }

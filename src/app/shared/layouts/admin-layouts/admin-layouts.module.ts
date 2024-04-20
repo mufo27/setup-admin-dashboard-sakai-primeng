@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 
-import { AdminLayoutsRoutingModule } from './admin-layouts-routing.module';
-
 import { AdminLayoutsComponent } from './admin-layouts.component';
 import { AdminTopbarComponent } from './admin-topbar/admin-topbar.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
@@ -24,7 +22,6 @@ import { AdminFooterComponent } from './admin-footer/admin-footer.component';
   imports: [
     CommonModule,
     RouterModule,
-    AdminLayoutsRoutingModule
   ]
 })
 export class AdminLayoutsModule { }
