@@ -2,6 +2,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
+import { AdminLayoutsComponent } from './shared/layouts/admin-layouts/admin-layouts.component';
+import { EmpLayoutsComponent } from './shared/layouts/emp-layouts/emp-layouts.component';
 
 @NgModule({
     imports: [
@@ -15,6 +17,18 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                     { path: 'documentation', loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },
                     { path: 'blocks', loadChildren: () => import('./demo/components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
+                ]
+            },
+            {
+                path: 'admin', component: AdminLayoutsComponent,
+                children: [
+                    { path: '', loadChildren: () => import('./shared/layouts/admin-layouts/admin-layouts.module').then(m => m.AdminLayoutsModule) },
+                ]
+            },
+            {
+                path: 'emp', component: EmpLayoutsComponent,
+                children: [
+                    { path: '', loadChildren: () => import('./shared/layouts/emp-layouts/emp-layouts.module').then(m => m.EmpLayoutsModule) },
                 ]
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },

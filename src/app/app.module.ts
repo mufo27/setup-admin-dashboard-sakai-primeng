@@ -12,14 +12,34 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 
+import { AdminLayoutsModule } from './shared/layouts/admin-layouts/admin-layouts.module';
+import { EmpLayoutsModule } from './shared/layouts/emp-layouts/emp-layouts.module';
+
+
 @NgModule({
-    declarations: [AppComponent, NotfoundComponent],
-    imports: [AppRoutingModule, AppLayoutModule],
+    declarations: [
+        AppComponent,
+        NotfoundComponent
+    ],
+    imports: [
+        AppRoutingModule,
+        AppLayoutModule,
+        AdminLayoutsModule,
+        EmpLayoutsModule
+    ],
     providers: [
-        { provide: LocationStrategy, useClass: PathLocationStrategy },
-        CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService
+        {
+            provide: LocationStrategy,
+            useClass: PathLocationStrategy
+        },
+        CountryService,
+        CustomerService,
+        EventService,
+        IconService,
+        NodeService,
+        PhotoService,
+        ProductService
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
